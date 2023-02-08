@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | Interactive card details form</title>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@700&family=Space+Grotesk:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="card">
+
+        <!-- left side of the card -->
+        <div class="left_card">
+            <img src="./images/bg-main-desktop.png" alt="">
+
+        </div>
+        <!-- end of left side of the card -->
+
+        <!-- card images front and back -->
+        <div class="image1">
+            <img class="front_card_logo" src="./images/card-logo.svg" alt="">
+
+            <img src="./images/bg-card-front.png" alt="">
+            <div class="front_card_number">
+                48787878347884989438
+            </div>
+
+            <div class="front_card_name">
+                Kelechi Amos Omeh
+            </div>
+            <div class="front_card_expiring_date">
+                <h4 id="ExpireMonth">09</h4>
+                <h3>/</h3>
+                <h4 id="ExpireYear">22</h4>
+            </div>
+        </div>
+
+        <div class="image2">
+            <img src="./images/bg-card-back.png" alt="">
+            <div class="cvc_number">
+                000
+            </div>
+        </div>
+        <!-- end of card images front and back -->
+
+        <!-- right side of the card -->
+        <div class="right_card">
+            <form action="" id="form">
+                <div class="group">
+                    <label for="name">CARD HOLDER NAME</label>
+                    <input id="inputName" maxlength="100" class="logInput" type="text"
+                        placeholder="eg: Kelechi Amos Omeh">
+                    <p class="card_name_error"></p>
+                </div>
+                <div class="group">
+                    <label for="name">CARD NUMBER</label>
+                    <input id="inputNumber" maxlength="20" class="logInput" type="text" placeholder="eg: 123456789...">
+                    <p class="card_number_error"></p>
+                </div>
+                <div class="last_group">
+                    <div class="date">
+                        <label for="expiring_date">EX. DATE (MM/YY) </label>
+
+                        <div class="theDate">
+                            <input id="month" maxlength="2" type="text" placeholder="09">
+                            <input id="year" maxlength="2" type="text" placeholder="YY">
+                        </div>
+                        <p class="date_error"></p>
+                    </div>
+
+                    <div class="cvc">
+                        <label for="CVC">CVC</label>
+                        <input type="text" id="cvcInput" maxlength="3" placeholder="eg. 123">
+                        <p class="cvc_error"></p>
+                    </div>
+                </div>
+                <div class="group">
+                    <button type="submit">Confirm</button>
+                </div>
+            </form>
+
+            <!-- success page -->
+            <div id="SuccessPage">
+                <img src="./images/icon-complete.svg" alt="">
+
+                <div class="appreciation">
+                    <h1>THANKS YOU!</h1>
+                    <P>We'en added your card details</P>
+                    <div class="group">
+                        <button type="submit">Continue </button>
+                    </div>
+                </div>
+            </div>
+            <!--end of success page -->
+        </div>
+        <!--End of right side of the card -->
+
+        <script src="script.js"></script>
+
+    </div>
+
+</body>
+
+</html>

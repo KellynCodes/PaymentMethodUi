@@ -1,0 +1,350 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+  --Linear-gradient-1: hsl(249, 99%, 64%);
+  --Linear-gradient-2: hsl(278, 94%, 30%);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+/* error print out p tags */
+p {
+  font-size: 0.7rem;
+}
+
+.card {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image1 {
+  position: absolute;
+  left: 16%;
+  top: 15%;
+  width: 20rem;
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-bottom: 3rem;
+}
+
+.image2 {
+  position: absolute;
+  left: 25%;
+  bottom: 15%;
+  width: 20rem;
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.image2 img,
+.image1 img {
+  width: 100%;
+  height: 100%;
+}
+
+.image1 .front_card_logo {
+  position: absolute;
+  top: 1em;
+  width: 10rem;
+  height: 6rem;
+  object-fit: cover;
+}
+
+.image1 .front_card_number {
+  position: absolute;
+  width: 18rem;
+  margin-left: 1em;
+  margin-bottom: -4rem;
+  height: 2.5rem;
+  color: #f0fff0;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image1 .front_card_name {
+  position: absolute;
+  margin-left: 1em;
+  margin-bottom: -9rem;
+  width: 10rem;
+  height: 2rem;
+  text-align: center;
+  color: #f0fff0;
+  font-size: 0.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image1 .front_card_expiring_date {
+  position: absolute;
+  height: 2rem;
+  width: 6rem;
+  margin-bottom: -9rem;
+  text-align: center;
+  color: #f0fff0;
+  margin-left: 13rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image2 .cvc_number {
+  position: absolute;
+  width: 5rem;
+  height: 2rem;
+  color: #f0fff0;
+  letter-spacing: 3px;
+  margin-top: 1em;
+}
+
+.left_card {
+  width: 30%;
+  height: 100%;
+}
+
+.left_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.right_card {
+  width: 68%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right_card form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 20rem;
+  height: 23rem;
+  gap: 2rem;
+}
+
+.right_card form .group {
+  width: 100%;
+  height: fit-content;
+}
+
+.right_card form .last_group {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+label {
+  font-size: 15px;
+  color: #221e1e;
+  font-weight: 600;
+}
+
+.right_card form .group .logInput {
+  width: 100%;
+  height: 2.4rem;
+  border: 2px solid #221e1e;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.card_name_error,
+.card_number_error,
+.date_error,
+.cvc_error {
+  color: #ff0000;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  font-size: 11px;
+}
+
+#inputName.error {
+  border: 2px solid #ff0000 !important;
+}
+#inputName.success {
+  border: 2px solid #008000 !important;
+}
+#inputNumber.error {
+  border: 2px solid #ff0000 !important;
+}
+#inputNumber.success {
+  border: 2px solid #008000 !important;
+}
+
+#month.error {
+  border: 2px solid #ff0000;
+}
+#month.success {
+  border: 2px solid #008000;
+}
+
+#year.error {
+  border: 2px solid #ff0000;
+}
+#year.success {
+  border: 2px solid #008000;
+}
+
+.right_card form .last_group .date,
+.cvc {
+  width: 48%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.right_card form .last_group .date .theDate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+}
+
+.right_card form .last_group .date input {
+  width: 48%;
+  height: 2.5rem;
+  border: 2px solid #221e1e;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  transition: 800ms;
+}
+
+.right_card form .last_group .date input:focus {
+  border: 2px solid var(--Linear-gradient-2);
+}
+
+.right_card .last_group .cvc input {
+  transition: 800ms;
+  width: 100%;
+  height: 2.5rem;
+  border: 2px solid #221e1e;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
+.group button {
+  width: 100%;
+  height: 2.5rem;
+  color: #ffff;
+  background-color: var(--Very-dark-violet);
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: 800ms;
+}
+
+.right_card form .group button:hover {
+  background-color: var(--Linear-gradient-2);
+}
+
+#SuccessPage {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 2.5rem;
+  max-width: 20rem;
+  height: 23rem;
+  gap: 2rem;
+}
+
+#SuccessPage p {
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* MOBILE CSS */
+@media screen and (max-width: 600px) {
+  body {
+    overflow: scroll !important;
+  }
+  .card {
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .left_card {
+    width: 100%;
+    height: 50vh;
+    margin-bottom: 8rem;
+  }
+
+  .image1 {
+    width: 16rem;
+    z-index: 10;
+    margin-left: -2.3rem;
+    top: 27%;
+  }
+
+  .image2 {
+    width: 16rem;
+    top: 6%;
+    margin-left: -2.3rem;
+  }
+
+  .image1 .front_card_number {
+    width: 18rem;
+    margin-left: 0.5em;
+  }
+
+  .image1 .front_card_name {
+    margin-left: 0;
+  }
+
+  .image1 .front_card_expiring_date {
+    margin-left: 11rem;
+  }
+
+  .right_card {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  form,
+  #SuccessPage {
+    width: 90%;
+  }
+}
